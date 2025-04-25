@@ -11,3 +11,10 @@ def count_characters(book_contents):
         else:
             counts[char] = 1
     return counts
+def sorted_list(book_character_counts):
+    char_counts_list = []
+    for char, count in book_character_counts.items():
+        char_dict = {"char": char, "num": count}
+        char_counts_list.append(char_dict)
+    char_counts_list.sort(reverse=True, key=lambda dict: dict["num"])
+    return char_counts_list
